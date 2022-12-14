@@ -1,0 +1,202 @@
+  [1m[35m (0.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello-front-end-development"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello-front-end-development"[0m
+  [1m[35m (1166.3ms)[0m  [1m[35mCREATE DATABASE "hello-front-end-development" ENCODING = 'unicode'[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE "hello-front-end-development" ENCODING = 'unicode'[0m
+  [1m[35m (194.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (140.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3811742229506256360)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGreetings (20221214001330)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (132.1ms)[0m  [1m[35mCREATE TABLE "greetings" ("id" bigserial primary key, "index" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221214001330"]]
+  [1m[36mTRANSACTION (22.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-14 00:42:34.762970"], ["updated_at", "2022-12-14 00:42:34.762970"]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3811742229506256360)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (387.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello-front-end-development"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello-front-end-development"[0m
+  [1m[35m (1012.2ms)[0m  [1m[35mCREATE DATABASE "hello-front-end-development" ENCODING = 'unicode'[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE "hello-front-end-development" ENCODING = 'unicode'[0m
+  [1m[35m (129.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (162.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3811742229506256360)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGreetings (20221214001330)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (149.9ms)[0m  [1m[35mCREATE TABLE "greetings" ("id" bigserial primary key, "greeting" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221214001330"]]
+  [1m[36mTRANSACTION (15.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-14 00:46:08.141866"], ["updated_at", "2022-12-14 00:46:08.141866"]]
+  [1m[36mTRANSACTION (13.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(3811742229506256360)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (1.1ms)[0m  [1m[32mINSERT INTO "greetings" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Hello"], ["created_at", "2022-12-14 00:46:29.704792"], ["updated_at", "2022-12-14 00:46:29.704792"]]
+  [1m[36mTRANSACTION (64.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.8ms)[0m  [1m[32mINSERT INTO "greetings" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Hello Rails!"], ["created_at", "2022-12-14 00:51:19.688151"], ["updated_at", "2022-12-14 00:51:19.688151"]]
+  [1m[36mTRANSACTION (54.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.7ms)[0m  [1m[32mINSERT INTO "greetings" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Hi"], ["created_at", "2022-12-14 00:51:19.752206"], ["updated_at", "2022-12-14 00:51:19.752206"]]
+  [1m[36mTRANSACTION (13.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.8ms)[0m  [1m[32mINSERT INTO "greetings" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Good morning"], ["created_at", "2022-12-14 00:51:19.773007"], ["updated_at", "2022-12-14 00:51:19.773007"]]
+  [1m[36mTRANSACTION (13.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.8ms)[0m  [1m[32mINSERT INTO "greetings" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Waving 👋👋👋"], ["created_at", "2022-12-14 00:51:19.796445"], ["updated_at", "2022-12-14 00:51:19.796445"]]
+  [1m[36mTRANSACTION (11.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.9ms)[0m  [1m[32mINSERT INTO "greetings" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Well done"], ["created_at", "2022-12-14 00:51:19.818099"], ["updated_at", "2022-12-14 00:51:19.818099"]]
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGreeting Load (1.2ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings"[0m
+Started GET "/" for 127.0.0.1 at 2022-12-13 19:53:30 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (7.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ijeoma/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ijeoma/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 15.6ms | Allocations: 586)
+Completed 200 OK in 56ms (Views: 25.4ms | ActiveRecord: 0.0ms | Allocations: 4661)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-13 19:53:30 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ijeoma/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ijeoma/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.7ms | Allocations: 281)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 973)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-13 19:53:30 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ijeoma/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ijeoma/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 15)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 247)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-13 19:53:30 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ijeoma/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ijeoma/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 15)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 221)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-13 19:53:55 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/greetings"):
+  
+Started GET "/greetings/index" for 127.0.0.1 at 2022-12-13 19:54:35 -0500
+  
+ActionController::RoutingError (uninitialized constant GreetingsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  GreetingsHelper
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/api/v1/greatings" for 127.0.0.1 at 2022-12-13 19:56:11 -0500
+  
+ActionController::RoutingError (uninitialized constant Api::V1::GreatingsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  Api::V1::GreetingsController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/api/v1/greatings" for 127.0.0.1 at 2022-12-13 20:00:42 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/greatings"):
+  
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-13 20:00:59 -0500
+  
+SyntaxError (/home/ijeoma/hello-front-end/app/controllers/api/v1/greetings_controller.rb:11: syntax error, unexpected `end', expecting end-of-input
+    end
+    ^~~
+):
+  
+app/controllers/api/v1/greetings_controller.rb:11: syntax error, unexpected `end', expecting end-of-input
+app/controllers/api/v1/greetings_controller.rb:11: syntax error, unexpected `end', expecting end-of-input
+app/controllers/api/v1/greetings_controller.rb:11: syntax error, unexpected `end', expecting end-of-input
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-13 20:02:13 -0500
+  
+Zeitwerk::NameError (expected file /home/ijeoma/hello-front-end/app/controllers/api/v1/greetings_controller.rb to define constant Api::V1::GreetingsController, but didn't
+
+      raise Zeitwerk::NameError.new("expected file #{file} to define constant #{cpath}, but didn't", cref.last)
+      ^^^^^):
+  
+zeitwerk (2.6.6) lib/zeitwerk/loader/callbacks.rb:25:in `on_file_autoloaded'
+zeitwerk (2.6.6) lib/zeitwerk/kernel.rb:31:in `require'
+activesupport (7.0.4) lib/active_support/inflector/methods.rb:280:in `const_get'
+activesupport (7.0.4) lib/active_support/inflector/methods.rb:280:in `constantize'
+activesupport (7.0.4) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (7.0.4) lib/action_dispatch/http/request.rb:90:in `controller_class_for'
+actionpack (7.0.4) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (7.0.4) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (7.0.4) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (7.0.4) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
