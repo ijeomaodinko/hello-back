@@ -311,3 +311,29 @@ Processing by Api::V1::GreetingsController#index as HTML
 Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 763)
 
 
+Started GET "/" for 127.0.0.1 at 2022-12-16 12:39:00 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (75.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ijeoma/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ijeoma/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 29.0ms | Allocations: 478)
+Completed 200 OK in 263ms (Views: 86.4ms | ActiveRecord: 0.0ms | Allocations: 3322)
+
+
+Started GET "/api/v1/reservations" for 127.0.0.1 at 2022-12-16 12:39:26 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/reservations"):
+  
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-16 12:39:42 -0500
+Processing by Api::V1::GreetingsController#index as HTML
+  [1m[36mGreeting Load (152.0ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 371ms (Views: 1.0ms | ActiveRecord: 255.2ms | Allocations: 6072)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-16 18:53:36 -0500
+Processing by Api::V1::GreetingsController#index as HTML
+  [1m[36mGreeting Load (56.4ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 1159ms (Views: 30.3ms | ActiveRecord: 863.2ms | Allocations: 3845)
+
+
