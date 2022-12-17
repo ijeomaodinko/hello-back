@@ -337,3 +337,184 @@ Processing by Api::V1::GreetingsController#index as HTML
 Completed 200 OK in 1159ms (Views: 30.3ms | ActiveRecord: 863.2ms | Allocations: 3845)
 
 
+  [1m[35m (1438.5ms)[0m  [1m[35mCREATE DATABASE "hello-back-end-development" ENCODING = 'unicode'[0m
+  [1m[35m (1250.3ms)[0m  [1m[35mCREATE DATABASE "hello-back-end-development_test" ENCODING = 'unicode'[0m
+  [1m[35m (26.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4166355660481437990)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGreetings (20221214001330)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.3ms)[0m  [1m[35mCREATE TABLE "greetings" ("id" bigserial primary key, "greeting" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221214001330"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-17 00:47:07.514413"], ["updated_at", "2022-12-17 00:47:07.514413"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4166355660481437990)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-12-17 01:47:37 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 17.1ms | Allocations: 632)
+Completed 200 OK in 133ms (Views: 50.4ms | ActiveRecord: 0.0ms | Allocations: 5190)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-17 01:47:48 +0100
+Processing by Api::V1::GreetingsController#index as HTML
+  [1m[36mGreeting Load (2.4ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 37ms (Views: 0.6ms | ActiveRecord: 2.4ms | Allocations: 2527)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (2.7ms)[0m  [1m[32mINSERT INTO "greetings" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Hello Rails!"], ["created_at", "2022-12-17 00:48:35.557309"], ["updated_at", "2022-12-17 00:48:35.557309"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.5ms)[0m  [1m[32mINSERT INTO "greetings" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Hi"], ["created_at", "2022-12-17 00:48:35.567242"], ["updated_at", "2022-12-17 00:48:35.567242"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.4ms)[0m  [1m[32mINSERT INTO "greetings" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Good morning"], ["created_at", "2022-12-17 00:48:35.572672"], ["updated_at", "2022-12-17 00:48:35.572672"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.4ms)[0m  [1m[32mINSERT INTO "greetings" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Waving 👋👋👋"], ["created_at", "2022-12-17 00:48:35.578036"], ["updated_at", "2022-12-17 00:48:35.578036"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.4ms)[0m  [1m[32mINSERT INTO "greetings" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Well done"], ["created_at", "2022-12-17 00:48:35.584175"], ["updated_at", "2022-12-17 00:48:35.584175"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-17 01:48:41 +0100
+Processing by Api::V1::GreetingsController#index as HTML
+  [1m[36mGreeting Load (0.6ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 234ms (Views: 1.0ms | ActiveRecord: 7.2ms | Allocations: 11387)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-17 02:57:55 +0100
+Processing by Api::V1::GreetingsController#index as */*
+  [1m[36mGreeting Load (13.3ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 852ms (Views: 24.5ms | ActiveRecord: 100.6ms | Allocations: 3964)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-17 02:59:29 +0100
+Processing by Api::V1::GreetingsController#index as */*
+  [1m[36mGreeting Load (0.6ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 32ms (Views: 3.9ms | ActiveRecord: 0.6ms | Allocations: 791)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-17 03:00:34 +0100
+Processing by Api::V1::GreetingsController#index as HTML
+  [1m[36mGreeting Load (1.5ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 23ms (Views: 1.3ms | ActiveRecord: 1.5ms | Allocations: 787)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-17 03:01:39 +0100
+Processing by Api::V1::GreetingsController#index as */*
+  [1m[36mGreeting Load (2.4ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 27ms (Views: 2.3ms | ActiveRecord: 2.4ms | Allocations: 789)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-17 03:01:42 +0100
+Processing by Api::V1::GreetingsController#index as */*
+  [1m[36mGreeting Load (1.1ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 18ms (Views: 0.8ms | ActiveRecord: 1.1ms | Allocations: 789)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-17 03:01:48 +0100
+Processing by Api::V1::GreetingsController#index as */*
+  [1m[36mGreeting Load (1.4ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 20ms (Views: 1.1ms | ActiveRecord: 1.4ms | Allocations: 805)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-17 03:01:51 +0100
+Processing by Api::V1::GreetingsController#index as */*
+  [1m[36mGreeting Load (1.0ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 17ms (Views: 1.0ms | ActiveRecord: 1.0ms | Allocations: 789)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-17 03:01:54 +0100
+Processing by Api::V1::GreetingsController#index as */*
+  [1m[36mGreeting Load (0.7ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 22ms (Views: 1.0ms | ActiveRecord: 0.7ms | Allocations: 789)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-17 03:01:59 +0100
+Processing by Api::V1::GreetingsController#index as */*
+  [1m[36mGreeting Load (1.0ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 24ms (Views: 1.2ms | ActiveRecord: 1.0ms | Allocations: 789)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-17 03:02:02 +0100
+Processing by Api::V1::GreetingsController#index as */*
+  [1m[36mGreeting Load (0.7ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 16ms (Views: 1.6ms | ActiveRecord: 0.7ms | Allocations: 789)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-17 03:02:06 +0100
+Processing by Api::V1::GreetingsController#index as */*
+  [1m[36mGreeting Load (1.1ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 40ms (Views: 0.8ms | ActiveRecord: 1.1ms | Allocations: 789)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-17 03:02:14 +0100
+Processing by Api::V1::GreetingsController#index as */*
+  [1m[36mGreeting Load (0.9ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 19ms (Views: 1.2ms | ActiveRecord: 0.9ms | Allocations: 789)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-17 03:04:09 +0100
+Processing by Api::V1::GreetingsController#index as */*
+  [1m[36mGreeting Load (0.6ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 20ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 789)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-17 03:04:33 +0100
+Processing by Api::V1::GreetingsController#index as */*
+  [1m[36mGreeting Load (1.1ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 25ms (Views: 1.0ms | ActiveRecord: 1.1ms | Allocations: 789)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-17 03:04:51 +0100
+Processing by Api::V1::GreetingsController#index as */*
+  [1m[36mGreeting Load (1.3ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 39ms (Views: 2.4ms | ActiveRecord: 1.3ms | Allocations: 789)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-17 03:06:38 +0100
+Processing by Api::V1::GreetingsController#index as */*
+  [1m[36mGreeting Load (0.7ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 22ms (Views: 1.0ms | ActiveRecord: 0.7ms | Allocations: 789)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-17 03:06:50 +0100
+Processing by Api::V1::GreetingsController#index as */*
+  [1m[36mGreeting Load (1.2ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 23ms (Views: 1.1ms | ActiveRecord: 1.2ms | Allocations: 789)
+
+
+Started GET "/api/v1/greetings" for 127.0.0.1 at 2022-12-17 03:10:54 +0100
+Processing by Api::V1::GreetingsController#index as */*
+  [1m[36mGreeting Load (2.0ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/greetings_controller.rb:5:in `index'
+Completed 200 OK in 27ms (Views: 1.1ms | ActiveRecord: 2.0ms | Allocations: 789)
+
+
